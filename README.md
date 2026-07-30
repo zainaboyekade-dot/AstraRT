@@ -48,6 +48,17 @@ Platform/
 ├── Protocol
 └── Memory
 
+## Key Engineering Challenges
+
+- **Designing a modular embedded architecture:** Developed a layered firmware structure separating application logic, runtime services, hardware abstraction, and peripheral drivers.
+
+- **Managing low-level software integration:** Resolved dependency, build, and linker challenges while maintaining clean interfaces between embedded software modules.
+
+- **Building reliable communication interfaces:** Implemented UART command handling and debugging tools to monitor system state, telemetry, and sensor health.
+
+- **Integrating hardware peripherals:** Validated I²C and SPI communication with external sensors while debugging hardware-software interactions.
+
+- **Creating an expandable runtime framework:** Designed AstraRT to support future sensor integration, additional services, and embedded applications.
 
 ## Hardware
 
