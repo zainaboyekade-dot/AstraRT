@@ -60,6 +60,40 @@ Current target:
 - I2C peripherals
 - SPI peripherals
 
+## Hardware Setup
+
+![AstraRT Hardware Setup](docs/images/hardware1.jpg)
+
+![AstraRT Hardware Board](docs/images/hardware2.jpg)
+
+![AstraRT System Setup](docs/images/hardware3.jpg)
+
+## Runtime Demonstration
+
+AstraRT provides a UART command interface for runtime diagnostics,
+sensor monitoring, and telemetry debugging.
+
+Available commands:
+
+- system_status
+- sensor_health
+- sensor_errors
+- telemetry_debug
+- memory_status
+- uptime
+- version
+
+
+### Runtime Health Monitoring
+
+![Runtime Health Demo](docs/images/runtime_health_demo.png)
+
+
+### Runtime Metrics
+
+![Runtime Metrics Demo](docs/images/runtime_metrics_demo.png)
+
+
 ## Current Status
 
 Active development
