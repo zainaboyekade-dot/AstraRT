@@ -1,0 +1,23 @@
+# STM32 build files
+Debug/
+Release/
+
+# IDE generated files
+*.launch
+*.settings/
+
+# Build outputs
+*.o
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+
+# CubeIDE generated files
+*.su
+*.cyclo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -17,12 +17,22 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
 #include "gpio.h"
+#include "i2c.h"
+#include "main.h"
+#include "spi.h"
+#include "usart.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "astra_gpio.h"
+#include "astra_i2c.h"
+#include "astra_uart.h"
+#include "bmi160.h"
+#include "Runtime/runtime.h"
+#include "Runtime/Scheduler/scheduler.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -86,7 +96,18 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  /* Initialize hardware peripherals */
   MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  MX_I2C1_Init();
+  MX_SPI2_Init();
+
+  /* Initialize AstraRT runtime */
+  runtime_init();
+  scheduler_timer_init();
+
+  /* Initialize platform drivers */
+  BMI160_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -101,6 +122,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	    scheduler_run();
 
     /* USER CODE END WHILE */
 
@@ -171,6 +193,7 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
+
   }
   /* USER CODE END Error_Handler_Debug */
 }
